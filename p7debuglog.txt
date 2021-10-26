@@ -1,0 +1,114 @@
+Reading symbols from a.out...
+(gdb) run
+Starting program: /home/a.out 
+Enter String Length:
+
+Breakpoint 1, main () at main.c:49
+49          scanf("%d", &length);
+(gdb) next
+7
+50          char name[length];
+(gdb) next
+51          input(name);
+(gdb) step
+input (name=0x7fffffffebe0 "") at main.c:8
+8       {
+(gdb) next
+9           printf("Enter the name of a Camel\n");
+(gdb) next
+Enter the name of a Camel
+10          scanf("%s", name);
+(gdb) next
+Badshah
+11      }
+(gdb) next
+main () at main.c:52
+52          int code = is_nice_name(name, length);
+(gdb) step
+is_nice_name (
+    name=0x5555555551bd <input+52> "\220\311\303\363\017\036\372UH\211\345H\211}\350\211u\344\307", <incomplete sequence \370>, length=0) at main.c:19
+19      {
+(gdb) next
+20          int i,vowels=0,consonants=0;
+(gdb) next
+21              for(i=0;name[i];i++)  
+(gdb) next
+23              if((name[i]>=65 && name[i]<=90)|| (name[i]>=97 && name[i]<=122))
+(gdb) next
+25                  if(name[i]=='a'|| name[i]=='e'||name[i]=='i'||name[i]=='o'||name[i]=='u'||name[i]=='A'||name[i]=='E'||name[i]=='I'||name[i]=='O' ||name[i]=='U')
+(gdb) next
+28                   consonants++;
+(gdb) next
+21              for(i=0;name[i];i++)  
+(gdb) next
+23              if((name[i]>=65 && name[i]<=90)|| (name[i]>=97 && name[i]<=122))
+(gdb) next
+25                  if(name[i]=='a'|| name[i]=='e'||name[i]=='i'||name[i]=='o'||name[i]=='u'||name[i]=='A'||name[i]=='E'||name[i]=='I'||name[i]=='O' ||name[i]=='U')
+(gdb) next
+26                            vowels++;
+(gdb) next
+21              for(i=0;name[i];i++)  
+(gdb) next
+23              if((name[i]>=65 && name[i]<=90)|| (name[i]>=97 && name[i]<=122))
+(gdb) next
+25                  if(name[i]=='a'|| name[i]=='e'||name[i]=='i'||name[i]=='o'||name[i]=='u'||name[i]=='A'||name[i]=='E'||name[i]=='I'||name[i]=='O' ||name[i]=='U')
+(gdb) next
+28                   consonants++;
+(gdb) next
+21              for(i=0;name[i];i++)  
+(gdb) next
+23              if((name[i]>=65 && name[i]<=90)|| (name[i]>=97 && name[i]<=122))
+(gdb) next
+25                  if(name[i]=='a'|| name[i]=='e'||name[i]=='i'||name[i]=='o'||name[i]=='u'||name[i]=='A'||name[i]=='E'||name[i]=='I'||name[i]=='O' ||name[i]=='U')
+(gdb) next
+28                   consonants++;
+(gdb) next
+21              for(i=0;name[i];i++)  
+(gdb) next
+23              if((name[i]>=65 && name[i]<=90)|| (name[i]>=97 && name[i]<=122))
+(gdb) next
+25                  if(name[i]=='a'|| name[i]=='e'||name[i]=='i'||name[i]=='o'||name[i]=='u'||name[i]=='A'||name[i]=='E'||name[i]=='I'||name[i]=='O' ||name[i]=='U')
+(gdb) next
+28                   consonants++;
+(gdb) next
+21              for(i=0;name[i];i++)  
+(gdb) next
+23              if((name[i]>=65 && name[i]<=90)|| (name[i]>=97 && name[i]<=122))
+(gdb) next
+25                  if(name[i]=='a'|| name[i]=='e'||name[i]=='i'||name[i]=='o'||name[i]=='u'||name[i]=='A'||name[i]=='E'||name[i]=='I'||name[i]=='O' ||name[i]=='U')
+(gdb) next
+26                            vowels++;
+(gdb) next
+21              for(i=0;name[i];i++)  
+(gdb) next
+23              if((name[i]>=65 && name[i]<=90)|| (name[i]>=97 && name[i]<=122))
+(gdb) next
+25                  if(name[i]=='a'|| name[i]=='e'||name[i]=='i'||name[i]=='o'||name[i]=='u'||name[i]=='A'||name[i]=='E'||name[i]=='I'||name[i]=='O' ||name[i]=='U')
+(gdb) next
+28                   consonants++;
+(gdb) next
+21              for(i=0;name[i];i++)  
+(gdb) next
+31          if (vowels >= 2 && consonants >= 2) return 0;
+(gdb) next
+33      }
+(gdb) next
+main () at main.c:53
+53          output(code);
+(gdb) step
+output (code=5) at main.c:36
+36      {
+(gdb) next
+37          if(code == 0) {
+(gdb) next
+38              printf("The Camel have nice name\n");
+(gdb) next
+The Camel have nice name
+43      }
+(gdb) next
+main () at main.c:54
+54          return 0;
+(gdb) cont
+Continuing.
+[Inferior 1 (process 1501) exited normally]
+(gdb) 
