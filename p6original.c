@@ -3,7 +3,7 @@
 
 void input(int size, int array[size])
 {
-  printf("Enter the element of the array; \n");
+  printf("Enter the element of the array");
   for (int i = 0; i < size; i++) {
     scanf("%d", &array[i]);
   }
@@ -15,10 +15,9 @@ float odd_average(int size, int array[size])
   int count = 0;
   float average = 0;
   for (int i = 0; i < size; i++) {
-      if ( array[i] %2 != 0) {
+      if ( array[i] %2 != 0)
             sum += array[i];
             count += 1;
-      }
   }
   if(sum)
         average = sum / count;
