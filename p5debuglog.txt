@@ -1,36 +1,52 @@
-#include <stdio.h>
-#include <math.h>
+Reading symbols from a.out...
+(gdb) run
+Starting program: /home/a.out 
 
-float input_x()
-{
-    float x;
-    printf("Enter the value of x\n");
-    scanf("%f",&x);
-    return x;
-}
-
-float compute_borgax(float x)
-{
-     float ret = 1, prev = 1,next_term;
-     for(int i = 1; prev > 0.000001; i+=2) {
-          next_term = prev * x/(i+1)*(i+2);
-          ret = ret + next_term;
-          prev = next_term;
-      }
-      return ret;
- }
- 
-void output(float x, float result)
-{
-    printf("borga(%f) is %f\n",x,result);
-}
-
-int main()
-{
-    float x,result;
-    x = input_x();
-    result = compute_borgax(x);
-    output(x,result);
-    return 0;
- }
-  
+Breakpoint 1, main () at main.c:33
+33          x = input_x();
+(gdb) step
+input_x () at main.c:5
+5       {
+(gdb) next
+7           printf("Enter the value of x\n");
+(gdb) next
+Enter the value of x
+8           scanf("%f",&x);
+(gdb) next
+2
+9           return x;
+(gdb) next
+10      }
+(gdb) next
+main () at main.c:34
+34          result = compute_borgax(x);
+(gdb) step
+compute_borgax (x=3.0611365e-41) at main.c:13
+13      {
+(gdb) next
+14           float ret = 1;
+(gdb) next
+15           float prev = 1;
+(gdb) next
+17           for(int i = 1;  i > 0.000001; i+=2) {
+(gdb) finish
+Run till exit from #0  compute_borgax (x=2) at main.c:17
+0x00005555555552e0 in main () at main.c:34
+34          result = compute_borgax(x);
+Value returned is $1 = 1.36829889
+(gdb) next
+35          output(x,result);
+(gdb) step
+output (x=0, result=-1.40129846e-45) at main.c:26
+26      {
+(gdb) next
+27          printf("borga(%f) is %f\n",x,result);
+(gdb) next
+borga(2.000000) is 1.368299
+28      }
+(gdb) next
+main () at main.c:36
+36          return 0;
+(gdb) continue
+Continuing.
+[Inferior 1 (process 317) exited normally]
