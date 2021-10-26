@@ -1,41 +1,46 @@
+/*
+Array processing With functions - 5 marks. 
+print all the elements of the array and then the average
+use following function prototypes. void input(int n, int a[n]) 
+float odd_average(int n, int a[n]); void output(int n, int a[n]); 
+ and main.
+*/  
+
 #include <stdio.h>
 #include <math.h>
 
-void input(int size, int array[size])
+int input(int size)
 {
+
+  int array[size];
   printf("Enter the element of the array");
   for (int i = 0; i < size; i++) {
-    scanf("%d", &array[i]);
+    scanf("%f", &ara[i]);
   }
+  return array;
 }
 
-float odd_average(int size, int array[size])
+float odd_average(int array, int size)
 {
   float sum = 0;
-  int count = 0;
-  float average = 0;
   for (int i = 0; i < size; i++) {
-      if ( array[i] %2 != 0)
-            sum += array[i];
-            count += 1;
+      sum += array[i];
   }
-  if(sum)
-        average = sum / count;
-  return average;
+  float average = sum / size;
+  return average
 }
 
 void output(float result)
 {
-  printf("Average of the given array is %f", result);
+  printf("Average of the given array is %f", result)
 }
 
 int main() {
   int size;
   printf("Enter array length : \n");
-  scanf("%d",&size);
-  int array[size];
-  input(size, array);
-  float result = odd_average(size, array);
+  scanf("%f",&size);
+  int array = input(size);
+  float result = odd_average(array, size);
   output(result);
   return 0;
 }
