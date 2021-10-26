@@ -1,0 +1,105 @@
+Reading symbols from a.out...
+(gdb) run
+Starting program: /home/a.out 
+Enter array length : 
+4
+
+Breakpoint 1, main () at main.c:37
+37        int array[size];
+(gdb) next
+38        input(size, array);
+(gdb) step
+input (size=32767, array=0x555555556051) at main.c:5
+5       {
+(gdb) next
+6         printf("Enter the element of the array; \n");
+(gdb) next
+Enter the element of the array; 
+7         for (int i = 0; i < size; i++) {
+(gdb) next
+8           scanf("%d", &array[i]);
+(gdb) next
+9
+7         for (int i = 0; i < size; i++) {
+(gdb) next
+8           scanf("%d", &array[i]);
+(gdb) next
+2
+7         for (int i = 0; i < size; i++) {
+(gdb) next
+8           scanf("%d", &array[i]);
+(gdb) next
+7
+7         for (int i = 0; i < size; i++) {
+(gdb) next
+8           scanf("%d", &array[i]);
+(gdb) next
+2
+7         for (int i = 0; i < size; i++) {
+(gdb) next
+10      }
+(gdb) next
+main () at main.c:39
+39        float result = odd_average(size, array);
+(gdb) step
+odd_average (size=4, array=0x7fffffffeb80) at main.c:13
+13      {
+(gdb) next
+14        float sum = 0;
+(gdb) next
+15        int count = 0;
+(gdb) next
+16        float average = 0;
+(gdb) next
+17        for (int i = 0; i < size; i++) {
+(gdb) next
+18            if ( array[i] %2 != 0) {
+(gdb) next
+19                  sum += array[i];
+(gdb) next
+20                  count += 1;
+(gdb) next
+17        for (int i = 0; i < size; i++) {
+(gdb) next
+18            if ( array[i] %2 != 0) {
+(gdb) next
+17        for (int i = 0; i < size; i++) {
+(gdb) next
+18            if ( array[i] %2 != 0) {
+(gdb) next
+19                  sum += array[i];
+(gdb) next
+20                  count += 1;
+(gdb) next
+17        for (int i = 0; i < size; i++) {
+(gdb) next
+18            if ( array[i] %2 != 0) {
+(gdb) next
+17        for (int i = 0; i < size; i++) {
+(gdb) next
+23        if(sum)
+(gdb) next
+24              average = sum / count;
+(gdb) next
+25        return average;
+(gdb) next
+26      }
+(gdb) next
+main () at main.c:40
+40        output(result);
+(gdb) step
+output (result=5.60519386e-45) at main.c:29
+29      {
+(gdb) next
+30        printf("Average of the given array is %f", result);
+(gdb) next
+31      }
+(gdb) next
+main () at main.c:41
+41        return 0;
+(gdb) next
+42      }
+(gdb) continue
+Continuing.
+Average of the given array is 8.000000[Inferior 1 (process 859) exited normally]
+(gdb) 
