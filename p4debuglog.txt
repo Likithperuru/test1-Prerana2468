@@ -1,0 +1,50 @@
+Reading symbols from a.out...
+(gdb) run
+Starting program: /home/a.out 
+
+Breakpoint 1, main () at main.c:62
+62          c=input();
+(gdb) step
+input () at main.c:10
+10      {
+(gdb) next
+12        printf("Enter radius, height, length of a camel\n");
+(gdb) next
+Enter radius, height, length of a camel
+13        scanf("%f%f%f",&c.radius, &c.height, &c.length);
+(gdb) next
+2 8 10
+14        return c;
+(gdb) next
+15       }
+(gdb) next
+main () at main.c:63
+63          mood = check_mood(c);
+(gdb) step
+check_mood (c=...) at main.c:23
+23       {
+(gdb) next
+24          if( c.radius < c.height && c.radius < c.length) 
+(gdb) next
+26            return 0;
+(gdb) next
+39        }
+(gdb) next
+main () at main.c:64
+64          output(c,mood);
+(gdb) step
+output (c=..., mood=-348898597) at main.c:43
+43       {
+(gdb) next
+44            if ( mood == 0 ) {
+(gdb) next
+45                printf("Camel is sick\n");
+(gdb) next
+Camel is sick
+56       }
+(gdb) next
+main () at main.c:65
+65          return 0;
+(gdb) continue
+Continuing.
+[Inferior 1 (process 834) exited normally
