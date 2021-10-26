@@ -1,0 +1,29 @@
+Reading symbols from a.out...
+(gdb) run
+Starting program: /home/a.out 
+
+Breakpoint 1, main () at main.c:6
+6           printf("Enter the coordinates of point 1\n");
+(gdb) next
+Enter the coordinates of point 1
+7           scanf("%f%f",&x1,&y1);
+(gdb) next
+0 0
+8           printf("Enter the coordinates of point 2\n");
+(gdb) next
+Enter the coordinates of point 2
+9           scanf("%f%f",&x2,&y2);
+(gdb) next
+1 1
+10          d = sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+(gdb) next
+11          printf("The distance between %f,%f and %f,%f is %f\n",x1,y1,x2,y2,d);
+(gdb) p d
+$1 = 1.41421354
+(gdb) next
+The distance between 0.000000,0.000000 and 1.000000,1.000000 is 1.414214
+12          return 0;
+(gdb) continue
+Continuing.
+[Inferior 1 (process 1338) exited normally]
+(gdb) 
